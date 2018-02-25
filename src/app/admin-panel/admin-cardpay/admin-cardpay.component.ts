@@ -67,8 +67,7 @@ export class AdminCardpayComponent implements OnInit {
               alert(jsonobj.authError);
             }
             callback.apply(this, [jsonobj]);
-          }
-          else {
+          } else {
             if (req.responseText != "") {
               var jsonobj = JSON.parse(req.responseText);
               if (jsonobj.authError) {

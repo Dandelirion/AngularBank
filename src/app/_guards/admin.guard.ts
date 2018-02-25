@@ -17,6 +17,7 @@ export class AdminGuard implements CanActivate {
 
     canActivate() {
         if (this.authenticationService.token || sessionStorage.getItem('currentUser')) {
+            this.authenticationService.validToken = true;
             return true;
         }
         this.router.navigate(['/login']);

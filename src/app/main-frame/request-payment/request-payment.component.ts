@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-// import $ from 'jquery';
 
 @Component({
   selector: 'app-request-payment',
@@ -24,7 +23,6 @@ export class RequestPaymentComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.reqPayForm)
   }
 
   resetForm() {
@@ -66,7 +64,6 @@ export class RequestPaymentComponent implements OnInit {
     "&nds="+this.ReqVATvalue+"&sum="+this.Sum+"&telly="+this.Telly+"&email="+this.email;
       req.onreadystatechange = function() {  
         if (req.readyState == 4 && req.status == 200) { 
-          console.log(req);
           alert("Ответ сервера: "+req.responseText);
         }
       }

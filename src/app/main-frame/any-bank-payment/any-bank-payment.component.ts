@@ -30,7 +30,6 @@ export class AnyBankPaymentComponent implements OnInit {
     "&cvc="+this.cvc+"&sum="+this.sum+"&comment="+this.comment+"&email="+this.email;
       req.onreadystatechange = function() {  
         if (req.readyState == 4 && req.status == 200) { 
-          console.log(req);
           alert("Ответ сервера: "+req.responseText);
         }
       }

@@ -21,7 +21,6 @@ export class SelfBankPaymentComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.selfBankForm)
   }
 
   resetForm() {
@@ -59,7 +58,6 @@ export class SelfBankPaymentComponent implements OnInit {
 
   confirmSP() {
     var args = "from="+this.From+"&bik="+this.BIK+"&acc_num="+this.AccNumber+"&vat="+this.VATvalue+"&sum="+this.Sum;
-    console.log(args);
     var req = new XMLHttpRequest()
       req.onreadystatechange = function() {  
         var a;
