@@ -1,0 +1,19 @@
+<p class="company-name">О компании Индивидуальный предприниматель Воронин Данил Дмитриевич</p>
+<div class="company-products">
+    <app-product
+    *ngFor="let prodElem of productsList"
+    [product]="prodElem"></app-product>             
+</div>
+<div class="company-about">
+    <p class="info-about">
+        Меня зовут Данил и я - студент 3 курса ИЕНиМ (aka МатМех) УрФУ,
+        обучающийся на специальности Компьютерная безопасность.
+    </p>
+    <p id="more-info" class="collapse">
+        Помимо технических наук разбираюсь также в гуманитарных и естественных,
+        владею английским языком на уровне Advanced.
+    </p>
+    <div class="more-info" data-toggle="collapse" data-target="#more-info">
+        <a>Показать/скрыть больше</a>
+    </div>
+</div>

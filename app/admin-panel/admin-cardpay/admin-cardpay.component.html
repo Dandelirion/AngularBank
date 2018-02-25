@@ -1,0 +1,85 @@
+<!-- <div *ngIf="isAuth"> -->
+<div class="table-responsive">
+  <table class="table table-striped table-hover table-bordered">
+    <thead>
+      <tr>
+        <th style="width:5%">ID</th>
+        <th style="width:15%">Номер карты</th>
+        <th style="width:8%">Срок действия</th>
+        <th style="width:7%">CVC</th>
+        <th style="width:10%">Сумма</th>
+        <th style="width:20%">Комментарий</th>
+        <th style="width:17%">email</th>
+        <th>Безопасность</th>
+      </tr>
+    </thead>
+    <tbody id="cardtbody">
+      <tr *ngFor="let row of rows" [ngClass]="{danger: !row.isSafe}">
+        <td>{{ row.id }}</td>
+        <td>{{ row.cardNum }}</td>
+        <td>{{ row.validThru }}</td>
+        <td>{{ row.cvc }}</td>
+        <td>{{ row.sum }}</td>
+        <td>{{ row.comment }}</td>
+        <td>{{ row.email }}</td>
+        <td><button class="btn btn-info btn-block" (click)="flipSafety(row.id)">Изменить</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="form-group">
+  <label for="sortCard">Выберите поле для сортировки</label>
+  <select class="form-control" id="sortCard" [(ngModel)]="SortField">
+    <option>Нет</option>
+    <option>ID</option>
+    <option>Номер карты</option>
+    <option>Срок действия</option>
+    <option>CVC</option>
+    <option>Сумма</option>
+    <option>Комментарий</option>
+    <option>email</option>
+  </select>
+</div>
+
+<label class="radio-inline"><input type="radio" 
+  name="optradio"
+  value="ASC"
+  [(ngModel)]="SortOption" 
+  [disabled]="SortField == 'Нет'">По возрастанию</label>
+<label class="radio-inline"><input type="radio" 
+  name="optradio" 
+  value="DESC"
+  [(ngModel)]="SortOption" 
+  [disabled]="SortField == 'Нет'">По убыванию</label>
+
+<div class="form-group">
+  <label for="filterCard">Выберите поле для поиска</label>
+  <select class="form-control" id="filterCard" #fC="ngModel" [(ngModel)]="FilterField">
+    <option>Нет</option>
+    <option>ID</option>
+    <option>Номер карты</option>
+    <option>Срок действия</option>
+    <option>CVC</option>
+    <option>Сумма</option>
+    <option>Комментарий</option>
+    <option>email</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="searchCardText">Поисковый запрос:</label>
+  <input type="text" 
+  class="form-control" 
+  id="searchCardText" 
+  [(ngModel)]="FilterText"
+  [disabled]="FilterField == 'Нет'">
+</div>
+
+<button class="btn btn-primary btn-block" (click)="confirm()">Подтвердить</button>
+<!-- </div> -->
+
+<!-- <div *ngIf="!isAuth">
+  <p>Ошибка авторизации: не валидный токен или его время жизни истекло. Авторизуйтесь снова.</p>
+  <button class="btn btn-primary btn-block" [routerLink]="['/login']">Авторизация</button>
+</div> -->

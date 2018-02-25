@@ -1,0 +1,12 @@
+img {
+    width: 100%;
+}
+
+.prod-descr {
+    text-align: center;
+}
+
+.prod-price {
+    text-align: left;
+    color: gray;
+}

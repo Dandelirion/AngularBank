@@ -1,0 +1,16 @@
+<div *ngIf="this.authService.validToken">
+<p><a [routerLink]="['/login']">Logout</a></p>
+<ul class="nav nav-pills nav-justified">
+  <li class="active"><a data-toggle="pill" href="#adm-card">Платежи по картам</a></li>
+  <li><a data-toggle="pill" href="#adm-req">Запрошенные платежи</a></li>
+</ul>
+<div class="tab-content">
+  <app-admin-cardpay id="adm-card" class="tab-pane fade in active" #child></app-admin-cardpay>
+  <app-admin-reqpay id="adm-req" class="tab-pane fade" #child></app-admin-reqpay>
+</div>
+</div>
+
+<div *ngIf="!this.authService.validToken">
+  <p>Ошибка авторизации: не валидный токен или его время жизни истекло. Авторизуйтесь снова.</p>
+  <button class="btn btn-primary btn-block" [routerLink]="['/login']">Авторизация</button>
+</div>

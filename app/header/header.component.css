@@ -1,0 +1,29 @@
+.text-info {
+    margin-bottom: 30px;
+}
+
+img {
+    margin: auto;
+}
+
+.person-info { 
+    display: inline-block;
+    font-size: 24px;
+    margin-bottom: 5px;
+    margin-right: 15px;
+}
+
+.person-name {
+    margin-top: 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.company-more-info, .company-details {
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+.telephone {
+    color: gray;
+}

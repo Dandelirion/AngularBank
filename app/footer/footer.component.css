@@ -1,0 +1,51 @@
+.social {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    background-color: rgb(180, 180, 180);
+    border: 1px solid rgb(112, 112, 112);
+    border-radius: 10px;
+    margin-right: 5%;
+    transition: .5s;
+    vertical-align: middle;
+}
+
+.vk {
+    background-image: url(../../assets/all.png);
+	background-position: 0 0;
+}
+
+.vk:hover {
+	background-color: #45688E;
+	cursor: pointer;
+}
+
+.fb {
+    background-image: url(../../assets/all.png);
+	background-position: -40px 0;
+}
+
+.fb:hover {
+	background-color: #3b5998;
+	cursor: pointer;
+}
+
+.twitter {
+    background-image: url(../../assets/all.png);
+	background-position: -80px 0;
+}
+
+.twitter:hover {
+	background-color: #00aced;
+	cursor: pointer;
+}
+
+.mail-icon {
+    background-image: url(../../assets/all.png);
+	background-position: -120px 0;
+}
+
+.mail-icon:hover {
+	background-color: #e02a2a;
+	cursor: pointer;
+}

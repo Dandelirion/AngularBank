@@ -1,0 +1,22 @@
+.option {
+    display: inline-block;
+    font-size: 20px;
+    margin-right: 20px;
+    color: rgb(100, 100, 255);
+    margin-bottom: 15px;
+}
+
+.option:not(.active) a:hover{
+    color: blue;
+    cursor: pointer;
+    background-color: rgb(150, 201, 223);
+    box-shadow: 0 0 30px 17px white inset;
+    transition: 0.4s;
+    border-radius: 20px;
+}
+
+.nav-pills > .active > a, .nav-pills > .active > a:hover {
+    background-color: inherit;
+    color: black;
+    cursor: default;
+}

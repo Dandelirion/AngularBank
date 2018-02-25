@@ -1,0 +1,50 @@
+.company-name {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.company-products {
+    text-align: center;
+}
+
+app-product {
+    width: 20%;
+    height: 400px;
+    max-height: 400px;
+    border: 1px solid rgb(199, 199, 199);
+    display: inline-block;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 30px;
+    vertical-align: top;
+    transition: .5s;
+}
+
+app-product:hover {
+    background-color: rgb(187, 219, 255);
+}
+
+.info-about {
+    font-weight: bold;
+}
+
+.more-info {
+    font-weight: bold;
+    color: rgb(100, 100, 255);
+}
+
+@media screen and (max-width: 1000px) {
+    app-product {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    app-product {
+        width: 90%;
+    }
+}

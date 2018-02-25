@@ -1,0 +1,87 @@
+<!-- <div *ngIf="isAuth"> -->
+<div class="table-responsive">
+  <table class="table table-striped table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>ИНН</th>
+        <th>БИК</th>
+        <th>Номер счета</th>
+        <th>НДС</th>
+        <th>Сумма</th>
+        <th>Телефон</th>
+        <th>email</th>
+      </tr>
+    </thead>
+    <tbody id="reqtbody">
+      <tr *ngFor="let row of rows">
+        <td>{{ row.id }}</td>
+        <td>{{ row.inn }}</td>
+        <td>{{ row.bik }}</td>
+        <td>{{ row.acc_num }}</td>
+        <td>{{ row.nds }}</td>
+        <td>{{ row.sum }}</td>
+        <td>{{ row.telly }}</td>
+        <td>{{ row.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="form-group">
+  <label for="sortReq">Выберите поле для сортировки</label>
+  <select class="form-control" id="sortReq" [(ngModel)]="SortField">
+    <option>Нет</option>
+    <option>ID</option>
+    <option>ИНН</option>
+    <option>БИК</option>
+    <option>Номер счета</option>
+    <option>НДС</option>
+    <option>Сумма</option>
+    <option>Телефон</option>
+    <option>email</option>
+  </select>
+</div>
+
+<label class="radio-inline"><input type="radio" 
+  name="optradioreq"
+  value="ASC"
+  [(ngModel)]="SortOption" 
+  [disabled]="SortField == 'Нет'">По возрастанию</label>
+<label class="radio-inline"><input type="radio" 
+  name="optradioreq" 
+  value="DESC"
+  [(ngModel)]="SortOption" 
+  [disabled]="SortField == 'Нет'">По убыванию</label>
+
+<div class="form-group">
+  <label for="filterReq">Выберите поле для поиска</label>
+  <select class="form-control" id="filterReq" #fR="ngModel" [(ngModel)]="FilterField">
+    <option>Нет</option>
+    <option>ID</option>
+    <option>ИНН</option>
+    <option>БИК</option>
+    <option>Номер счета</option>
+    <option>НДС</option>
+    <option>Сумма</option>
+    <option>Телефон</option>
+    <option>email</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="searchReqText">Поисковый запрос:</label>
+  <input type="text" 
+  class="form-control" 
+  id="searchReqText" 
+  [(ngModel)]="FilterText"
+  [disabled]="FilterField == 'Нет'">
+</div>
+
+<button class="btn btn-primary btn-block" (click)="confirm()">Подтвердить</button>
+<!-- </div> -->
+
+<!-- <div *ngIf="!isAuth">
+  <p>Ошибка авторизации: не валидный токен или его время жизни истекло. Авторизуйтесь снова.</p>
+  <button class="btn btn-primary btn-block" [routerLink]="['/login']">Авторизация</button>
+</div> -->

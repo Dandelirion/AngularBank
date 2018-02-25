@@ -1,0 +1,19 @@
+app-choice-menu {
+    display: block;
+    margin-bottom: 20px;
+}
+
+app-options-menu {
+    display: block;
+    margin-bottom: 15px;
+}
+
+app-any-bank-payment {
+    display: block;
+}
+
+app-self-bank-payment,
+app-request-payment {
+    display: none;
+}
+

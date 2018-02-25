@@ -1,0 +1,115 @@
+<form 
+class="row form-horizontal"
+(ngSubmit)="onSubmit()" #reqPayForm="ngForm">
+    <p class="payment-self-info">Создайте платежку, а Индивидуальный предприниматель Воронин Данил Дмитриевич подпишет её у себя в интернет-банке</p>
+    <div class="form-group">
+        <label class="control-label inp-block-label col-sm-3">ИНН получателя:</label>
+        <div class="col-sm-6">
+            <input 
+            class="inp-block-input-req" 
+            placeholder="ИНН или название получателя"
+            [(ngModel)]="INN"
+            name="INN"
+            minlength="10"
+            maxlength="12"
+            required
+            pattern="^[\d]{10}$|^[\d]{12}$"
+            mask="000000000000">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label inp-block-label col-sm-3">БИК:</label>
+        <div class="col-sm-6">
+            <input 
+            class="inp-block-input-req"
+            [(ngModel)]="BIK"
+            name="BIC"
+            required
+            maxlength="9"
+            minlength="9"
+            mask="000000000">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label inp-block-label col-sm-3">Номер счета:</label>
+        <div class="col-sm-6">
+            <input 
+            class="inp-block-input-req"
+            [(ngModel)]="AccNum"
+            name="accountNum"
+            required
+            maxlength="20"
+            minlength="20"
+            mask="00000000000000000000">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label inp-block-label col-sm-3">За что:</label>
+        <div class="col-sm-6">
+            <input 
+            class="inp-block-input-req" 
+            id="ReqVAT-holder" 
+            placeholder="без НДС"
+            [ngModel]="ReqVATprint"
+            name="VAT"
+            readonly>
+        </div>
+    </div>
+    <div class="VAT-choice-req col-sm-offset-3 col-sm-9 col-xs-11 col-xs-offset-1">
+        <div class="VAT rVAT" (click)="chooseVAT('18')">НДС 18%</div>
+        <div class="VAT rVAT" (click)="chooseVAT('10')">НДС 10%</div>
+        <div class="VAT rVAT VATactive" id="rVATdef" (click)="chooseVAT('0')">без НДС</div>
+    </div>
+    <div class="form-group">
+        <label class="control-label inp-block-label col-sm-3">Сколько:</label>
+        <div class="col-sm-6">
+            <input 
+            class="inp-block-input-req"
+            [(ngModel)]="Sum"
+            name="howMuch"
+            required
+            pattern="^[1-9][\d]{3}$|^[1-6][\d]{4}$|^7[0-4][\d]{3}$|75000"
+            mask="00000">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label inp-block-label col-sm-3">Номер телефона:</label>
+        <div class="col-sm-6">
+            <input 
+            type="text"
+            id="telID"
+            class="inp-block-input-req" 
+            placeholder="+7"
+            [(ngModel)]="Telly"
+            name="teleNum"
+            required
+            minlength="11"
+            mask="+7 (000) 000-00-00">
+        </div>
+    </div>
+    <div class="telephone-warning col-sm-offset-3 col-sm-9 col-xs-11 col-xs-offset-1">Оставляя номер, Вы соглашаетесь на обработку персональных данных</div>
+    <div class="form-group">
+        <label class="control-label inp-block-label col-sm-3">Эл.почта:</label>
+        <div class="col-sm-6">
+            <input 
+            class="inp-block-input-req" 
+            placeholder="Для уведомлений об оплате"
+            [(ngModel)]="email"
+            name="email"
+            required
+            email>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-9 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+            <button 
+            class="main-button req-pay-button"
+            type="submit"
+            (click)="confirmRP()"
+            [disabled]="!reqPayForm.valid">Создать платеж</button>
+        </div>
+    </div>
+    <div class="clear-form" (click)="resetForm()">
+        <a>Очистить форму</a>
+    </div>
+</form>

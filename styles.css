@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+    height: 100%;
+}
+
+* {
+    font-family: "Arial", sans-serif;
+    text-decoration: none;
+}
+
+a {
+    color: rgb(100, 100, 255);
+}
+
+a:hover {
+    color: blue;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+app-root {
+    /* display: block; */
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 70px;
+}
+
+.main-button {
+    display: block;
+    height: 50px;
+    box-shadow:
+    -20px 20px 0 -17px #fff,
+    20px -20px 0 -17px #fff,
+    0 0 0 2px #bdbdbd,
+    0 0 6px 2px white inset;
+    background-image: linear-gradient(to bottom right, rgb(129, 255, 249), rgb(255, 175, 78), rgb(129, 255, 249));
+    border: none;
+    font-size: 20px;
+    color: gray;
+    transition: .5s;
+    background-size: 200% auto;
+    outline: none;
+    /* margin-bottom: 20px; */
+}
+
+.main-button:hover {
+    background-position: right center;
+    cursor: pointer;
+}
